@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>D2C Gaming Store</title>
+    <link rel="shortcut icon" href="./assets/images/logod2c.png">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+        integrity="sha384-eoTu3+HydHRBIjnCVwsFyCpUDZHZSFKEJD0mc3ZqSBSb6YhZzRHeiomAUWCstIWo" crossorigin="anonymous">
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #1e253e;
+            width: 80%;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            position: initial;
+        }
+
+        .swiper-pagination {
+            text-align: left;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #fff !important;
+        }
+
+        .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .accordion-flush .accordion-item .accordion-button {
+            box-shadow: none;
+        }
+
+        .accordion-collapse {
+            opacity: 80%;
+        }
+
+        .accordion-item {
+            background-color: #1e253e;
+            border: 1px solid #1e253e;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .accordion-button:focus {
+            border-color: #1e253e;
+            box-shadow: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #1e253e;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .accordion-button {
+            background-color: #1e253e;
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: 18px;
+            padding: 1rem 0;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url('./assets/icons/MinusWhite.svg');
+        }
+
+        .accordion-button::after {
+            background-image: url('./assets/icons/PlusWhite.svg');
+        }
+
+        .accordion-body {
+            padding: 0 0 1rem 0;
+        }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .has-search .form-control {
+            width: 100% !important;
+            padding: .375rem 1.25rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            color: #ffffff;
+        }
+
+        .btn-search {
+            color: #ffffff;
+            margin-left: -45px;
+            border-radius: 20px;
+            background: #fff;
+            padding: .3rem 1rem !important;
+        }
+
+        .btn-search:hover {
+            outline: none;
+            border: 0;
+        }
+
+        .text-orange {
+            color: #ff9c03;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: .875rem;
+        }
+
+        .pl-15 {
+            padding-left: 15px;
+        }
+
+        .gallery__image {
+            position: relative;
+            padding: 0 15px 0 0;
+        }
+
+        .image__gallery img {
+            border-radius: 10px;
+            position: relative;
+            display: block;
+        }
+
+        .image__gallery {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image__gallery:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(109, 121, 164, 0) 0%, #1E253E 84%);
+        }
+
+        .gallery__image .label {
+            position: absolute;
+            padding: 0;
+            top: 4%;
+            left: 4%;
+            width: 13.5%;
+        }
+
+        .gallery__image .title {
+            position: absolute;
+            bottom: 10%;
+            left: 4%;
+            width: 65%;
+            color: #ffffff;
+            font-size: .8rem;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery__image {
+                width: 33.3333333333%;
+            }
+        }
+
+        .testimonial.swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .testimonial .swiper-slide {
+            text-align: left;
+            font-size: 18px;
+            /* background: #fff; */
+            width: 80%;
+            color: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: start;
+        }
+
+        .testimonial .swiper-button-next,
+        .swiper-button-prev {
+            background-color: #111523;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+        }
+
+        .testimonial .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 12px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .testimonial .swiper-button-next,
+        .testimonial .swiper-button-prev {
+            top: 5% !important;
+        }
+
+        .testimonial .swiper-button-next {
+            right: 0px !important;
+        }
+
+        .testimonial .swiper-button-prev {
+            left: 85% !important;
+        }
+
+        .font-thin {
+            font-weight: 300;
+        }
+
+        .chevron {
+            background-color: #111523;
+            border-radius: 50%;
+            outline: none;
+            border: 0;
+            padding: 4px 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .testimonial .swiper-button-prev {
+                left: 80% !important;
+            }
+        }
+
+        .text-orange:hover {
+            color: #ff9c03;
+        }
+    </style>
+</head>
+
+<body class="bg-variant-1">
+    <!-- TOPBAR -->
+    <nav class="navbar bg-variant-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/images/Logo.svg" alt="" width="100" height="30">
+            </a>
+        </div>
+    </nav>
+
+    <!-- MENU -->
+    <section class="menu bg-variant-2" id="listMenu">
+        <div class="container px-5 py-3 d-flex justify-content-between">
+            <a href="./index.html"
+                class="menu-item d-flex flex-column justify-content-center align-items-center text-decoration-none active">
+                <i class="bi bi-house" style="font-size: 1.25rem;"></i>
+                <span class="fz-14">Beranda</span>
+            </a>
+            <a href="./transaksi.html"
+                class="menu-item d-flex flex-column justify-content-center align-items-center text-decoration-none">
+                <i class="bi bi-clipboard" style="font-size: 1.25rem;"></i>
+                <span class="fz-14">Transaksi</span>
+            </a>
+            <a href="./login.html"
+                class="menu-item d-flex flex-column justify-content-center align-items-center text-decoration-none">
+                <i class="bi bi-box-arrow-in-right" style="font-size: 1.25rem;"></i>
+                <span class="fz-14">Masuk</span>
+            </a>
+
+            <!-- IF USER HAS LOGIN -->
+            <!-- <a href="./login.html" class="menu-item d-flex flex-column justify-content-center align-items-center text-decoration-none">
+                <i class="bi bi-person" style="font-size: 1.25rem;"></i>
+                <span class="fz-14">Akun</span>
+            </a> -->
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section>
+        <div class="container min-h-100vh bg-variant py-4">
+            <!--  slider -->
+            <div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/images/img/swiper1.png" class="d-block w-100" alt="img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/img/swiper1.png" class="d-block w-100" alt="img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/images/img/swiper1.png" class="d-block w-100" alt="img">
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!--  game gallery -->
+            <div class="mb-5 mt-3">
+                <form class="form-inline has-search my-2">
+                    <input class="form-control" type="search" id="search-game"
+                        placeholder="Cari game favorit Anda disini" aria-label="Search">
+                </form>
+
+                <div class="row mt-4" id="myGalleyImage">
+                    <div class="col">
+                        <div id="ditusiGameGallery">
+                            <div class="btn-group">
+                                <button class="btn btn-filter active" onclick="filterGallery('most-popular')">Most
+                                    Popular</button>
+                                <button class="btn btn-filter" onclick="filterGallery('powered-gp')">Powered by Google
+                                    Play</button>
+                                <button class="btn btn-filter" onclick="filterGallery('direct-topup')">Direct Top
+                                    Up</button>
+                                <button class="btn btn-filter"
+                                    onclick="filterGallery('exclusive-merchandise')">Exclusive
+                                    Merchandise</button>
+                                <button class="btn btn-filter" onclick="filterGallery('special-service')">Special
+                                    Service</button>
+                                <button class="btn btn-filter" onclick="filterGallery('voucher')">Voucher</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates most-popular">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Mobile Legends
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates powered-gp">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-googleplay/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates direct-topup">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-direct-topup/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-direct-topup/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-direct-topup/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates exclusive-merchandise">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-exclusive-merchandise/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-exclusive-merchandise/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates special-service">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-special-service/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-special-service/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/gi.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-updates voucher">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-3 pl-15">
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-voucher/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/ml.png" class="img-fluid" loading="lazy" alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-sm-4 gallery__image mt-2">
+                            <a href="./d2cgamingstore/detail-voucher/index.html">
+                                <div class="image__gallery">
+                                    <img src="./assets/images/hero/val.png" class="img-fluid" loading="lazy"
+                                        alt="image">
+                                </div>
+                                <div class="label d-flex gap-1">
+                                    <img src='./assets/images/img/Label2.png' class='img-fluid' alt='image' />
+                                </div>
+                                <div class="title">
+                                    Genshin Impact
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center mt-3">
+                        <a href="javascript:void(0)" class="text-orange" onclick="showMore()">
+                            Lihat Lebih Banyak <img src="./assets/icons/chevron-down.svg" alt="chevron-down">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--  update terbaru -->
+            <div class="my-5">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="text-white fz-24 mb-0">Update Terbaru</h2>
+                    <a href="./d2cgamingstore/updates/index.html" class="fz-14 text-orange">Lihat Selengkapnya</a>
+                </div>
+
+                <div class="my-3">
+                    <div class="d-flex gap-2 flex-column mb-3">
+                        <a href="./d2cgamingstore/updates/updates-detail.html">
+                            <img src="./assets/images/img/update1.png" width="100%" class="img-fluid" alt="">
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label class="font-bold text-white fz-16">
+                                Genshin Game Patch 2.8
+                            </label>
+                            <span class="fz-14" style="color: rgba(255, 255, 255, 0.8);">
+                                10 Juli 2022
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 flex-column mb-3">
+                        <a href="./d2cgamingstore/updates/updates-detail.html">
+                            <img src="./assets/images/img/update2.png" width="100%" class="img-fluid" alt="">
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label class="font-bold text-white fz-16">
+                                DITUSI Giveaway Party!!
+                            </label>
+                            <span class="fz-14" style="color: rgba(255, 255, 255, 0.8);">
+                                6 Juli 2022
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2 flex-column mb-3">
+                        <a href="./d2cgamingstore/updates/updates-detail.html">
+                            <img src="./assets/images/img/update3.png" width="100%" class="img-fluid" alt="">
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label class="font-bold text-white fz-16">
+                                Genshin Impact Sumeru Trailer
+                            </label>
+                            <span class="fz-14" style="color: rgba(255, 255, 255, 0.8);">
+                                2 Juli 2022
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  testimoni -->
+            <div class="my-5">
+                <div class="d-flex justify-content-between align-items-center">
+                </div>
+
+                <div class="my-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="testimonial swiper">
+                                <h2 class="text-white fz-24 mb-0">Testimoni</h2>
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide flex-column gap-3">
+                                        <img src="./assets/images/img/testi1.png" alt="...">
+                                        <p class="font-thin fz-16 mb-2" style="opacity: 80%;">“Gue selalu top up Genshin
+                                            di DITUSI
+                                            sejak 2017, ga pernah ngecewain sama sekali. Harganya juga bersahabat, big
+                                            thanks to
+                                            DITUSI team!”</p>
+                                        <span class="fz-16 font-bold text-start">Sandya Minova</span>
+                                    </div>
+                                    <div class="swiper-slide flex-column gap-3 ">
+                                        <img src="./assets/images/img/testi1.png" alt="...">
+                                        <p class="font-thin fz-16 mb-2" style="opacity: 80%;">“Gue selalu top up Genshin
+                                            di DITUSI
+                                            sejak 2017, ga pernah ngecewain sama sekali. Harganya juga bersahabat, big
+                                            thanks to
+                                            DITUSI team!”</p>
+                                        <span class="fz-16 font-bold text-start">Sandya Minova</span>
+                                    </div>
+                                    <div class="swiper-slide flex-column gap-3">
+                                        <img src="./assets/images/img/testi1.png" alt="...">
+                                        <p class="font-thin fz-16 mb-2" style="opacity: 80%;">“Gue selalu top up Genshin
+                                            di DITUSI
+                                            sejak 2017, ga pernah ngecewain sama sekali. Harganya juga bersahabat, big
+                                            thanks to
+                                            DITUSI team!”</p>
+                                        <span class="fz-16 font-bold text-start">Sandya Minova</span>
+                                    </div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="testimonial swiper-pagination"></div>
+
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  frequently asked questions -->
+            <div class="my-5">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="text-white fz-24 mb-0">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="accordion accordion-flush" id="accordionExample">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Apa itu top up Powered by Google Play?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                                            Velit officia
+                                            consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud
+                                            amet
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Apa itu top up Direct ID?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                                            Velit officia
+                                            consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud
+                                            amet
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                            Apakah saya akan mendapat invoice saat top up game?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Amet minim mollit non deserunt ullamco est sit
+                                            aliqua dolor do
+                                            amet sint. Velit officia consequat duis enim velit mollit. Exercitation
+                                            veniam consequat
+                                            sunt nostrud amet</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFour">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
+                                            aria-expanded="false" aria-controls="flush-collapseFour">
+                                            Apakah top up di DITUSI aman dan legal?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Amet minim mollit non deserunt ullamco est sit
+                                            aliqua dolor do
+                                            amet sint. Velit officia consequat duis enim velit mollit. Exercitation
+                                            veniam consequat
+                                            sunt nostrud amet</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFive">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
+                                            aria-expanded="false" aria-controls="flush-collapseFive">
+                                            Apakah saya dapat top up melalui WA?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Amet minim mollit non deserunt ullamco est sit
+                                            aliqua dolor do
+                                            amet sint. Velit officia consequat duis enim velit mollit. Exercitation
+                                            veniam consequat
+                                            sunt nostrud amet</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="bg-variant-1">
+            <div class="bg-variant-3 w-480 pb-7rem pt-4 px-3 m-auto">
+                <div class="d-flex gap-2 align-items-center">
+                    <img src="./assets/images/logoo.svg" alt="">
+                    <h2 class="text-white mb-0">DITUSI Gaming</h2>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <p class="mb-0 fz-16" style="color: rgba(255, 255, 255, 0.8)">
+                            Platform Top-Up dan Komunitas Game yang memberikan Real Testimoni Transparan kepada Para
+                            Gamer.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <table>
+                            <tr>
+                                <td class="align-baseline py-2"><img src="./assets/icons/Location.png" alt=""></td>
+                                <td class="fz-16 text-white opacity-70 pl-15 py-2">
+                                    Kencana Tower, Mezzanine Floor, Jl. Meruya Ilir Raya No.88, Kb. Jeruk, Daerah Khusus
+                                    Ibukota Jakarta 11620
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-baseline py-2"><img src="./assets/icons/mails.png" alt=""></td>
+                                <td class="fz-16 text-white opacity-70 pl-15 py-2">
+                                    emailDitusi@mail.com
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-baseline py-2"><img src="./assets/icons/whatsappp.png" alt=""></td>
+                                <td class="fz-16 text-white opacity-70 pl-15 py-2">
+                                    +62 8598-9099-1090
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <h6 class="text-white fz-18">Ditusi Gaming</h6>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="#" class="text-white text-decoration-none opacity-70">Home</a>
+                            <a href="#" class="text-white text-decoration-none opacity-70">Event</a>
+                            <a href="#" class="text-white text-decoration-none opacity-70">Hubungi Kami</a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="text-white fz-18">Pelajari Lebih Lanjut</h6>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="./d2cgamingstore/learn-more/tentang-kami.html"
+                                class="text-white text-decoration-none opacity-70">Tentang Kami</a>
+                            <a href="./d2cgamingstore/learn-more/syarat-dan-ketentuan.html"
+                                class="text-white text-decoration-none opacity-70">Syarat dan Ketentuan</a>
+                            <a href="./d2cgamingstore/learn-more/kebijakan-privasi.html"
+                                class="text-white text-decoration-none opacity-70">Kebijakan Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4" style="border: 1px solid #fff;" />
+
+                <div class="row">
+                    <div class="col gap-3 d-flex fz-20">
+                        <a href="#" target="_blank"><i class="bi bi-youtube text-white"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-facebook text-white"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-tiktok text-white"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram text-white"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-telegram text-white"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-discord text-white"></i></a>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <p class="mb-0 fz-16" style="color: rgba(255, 255, 255, 0.8)">
+                            © 2021 PT. Emvipix Digital Kreatif - Ditusi Gaming Store. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper', {
+            spaceBetween: 30,
+            // centeredSlides: true,
+            slidesPerView: 'auto',
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <script>
+        $("#myGalleyImage .btn-filter").on('click', function () {
+            $(this).siblings().removeClass('active')
+            $(this).addClass('active');
+        })
+
+        filterGallery("most-popular")
+
+        function filterGallery(c) {
+            var x, i;
+            x = document.getElementsByClassName("item-updates");
+            // untuk menampilkan semua data
+            // if (c == "2022") c = "";
+            for (i = 0; i < x.length; i++) {
+                removeClassGallery(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) addClassGallery(x[i], "show");
+            }
+        }
+
+        function addClassGallery(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function removeClassGallery(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+    </script>
+
+    <script type="text/javascript">
+        var swiper = new Swiper('.testimonial.swiper', {
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+</body>
+
+</html>
